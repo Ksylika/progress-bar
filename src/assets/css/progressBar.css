@@ -1,0 +1,118 @@
+.progressBar {
+    display: grid;
+    grid-template-areas:
+    'title title'
+    'cirle menu' ;
+    grid-template-rows: auto 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 3em;
+    align-items: center;
+    justify-items: center;
+}
+
+.progressBar__wrapper {
+    display: flex;
+    width: 50%;
+    aspect-ratio: 1;
+    row-gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progressBar__title { 
+    display: flex;
+    grid-area: title;
+    justify-content: start;
+    width: 100%;
+    font-size: 2rem;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 5px;
+    
+}
+
+
+.progressBar__circle {
+    --progress: 0;
+    --progress-color-circle: #ff3a33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+    width: 80%;
+    aspect-ratio: 1;
+    position: relative;
+    background: conic-gradient(from 0deg, var(--progress-color-circle) calc(var(--progress) * 1%), var(--semi-transp-color) calc(var(--progress) * 1%));
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.progressBar__circle_animated {
+    animation: 3s infinite rotation ease-in-out;
+}
+
+.progressBar__circle_hidden {
+    animation: 0.5s fade-away ease-out;
+    opacity: 0;
+}
+
+.progressBar__circle::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background-color: var(--background-color);
+    width: 85%;
+    aspect-ratio: 1;
+}
+
+.progressBar__settings {
+    display: flex;
+    row-gap: 1em;
+    flex-direction: column;
+    margin-right: 10%;
+    width: 50%;
+}
+
+
+
+.progressBar__cat-image {
+    display: var(--cat-display);
+    position: absolute;
+    width: 90%;
+    left: 10%;
+    z-index: 10;
+}
+
+.progressBar__eye {
+    --pupil-offset-x: 0;
+    --pupil-offset-y: 0;
+    position: absolute;
+    top: 33%;
+    transform: translate(calc(-50% + var(--pupil-offset-x)), calc(-50% + var(--pupil-offset-y)));
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    z-index: 15;
+    background: var(--background-color-eye);
+    border-radius: 50%;
+}
+.progressBar__eye::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + var(--pupil-offset-x)), calc(-50% + var(--pupil-offset-y)));
+    width: 10px;
+    height: 10px;
+    z-index: 30;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+
+.progressBar__eye.left {
+    transform: translate(33%, -50%);
+}
+.progressBar__eye.right {
+    transform: translate(-33%, -50%);
+}

@@ -1,0 +1,168 @@
+.settings {
+    font-size: 1.5rem;
+}
+
+.settings__property {
+    display: flex;
+    flex: 1 1;
+    align-items: center;
+    gap: 25%;
+}
+
+.settings__property.input {
+    gap: 10%;
+}
+
+.settings__input {
+    --progress-color-input: var(--blueish-border-color);
+    width: 50px;
+    height: 2rem;
+    text-align: center;
+    border-radius: 30px;
+    border: var(--blueish-border-color) 1px solid;
+    font-size: 1rem;
+    outline: none;
+}
+
+.settings__input:focus {
+    outline: none;
+    border-color: var(--progress-color-input);
+}
+
+.settings__checkbox {
+    display: none;
+}
+
+.settings__checkbox + .toggle {
+    display: block;
+    position: relative;
+    min-width: 3rem;
+    height: 1.75rem;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    user-select: none;
+}
+
+.settings__checkbox + .toggle::before,
+.settings__checkbox + .toggle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}
+
+.settings__checkbox + .toggle::before {
+    width: 100%;
+    height: 100%;
+    background-color: var(--semi-transp-color);
+    border-radius: 56px;
+    -webkit-transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease;
+}
+
+.settings__checkbox + .toggle::after {
+    top: 0;
+    left: 0;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    border: 1px solid var(--blueish-border-color);
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.45);
+    -webkit-transition: left 0.25s ease;
+    transition: left 0.25s ease;
+}
+
+.settings__checkbox:checked + .toggle::before {
+    background: linear-gradient(115deg, #ff045c, #fffdd0);
+}
+
+.settings__checkbox:checked + .toggle::after {
+    left: 24px;
+}
+
+
+
+.settings__checkbox + .toggleDarkLight
+{
+    display: block;
+    position: relative;
+    min-width: 3rem;
+    height: 1.75rem;
+    text-indent: -150%;
+    clip: rect(0 0 0 0);
+    color: transparent;
+    background-color: #77b5fe;
+    border-radius: 56px;
+    transition: 0.3s ease background-color;
+    overflow: hidden;
+}
+.star
+{
+    position: absolute;
+    top: 6px;
+    bottom: 0;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: #fafd0f;
+    transform: scale(1);
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s ease top;
+}
+
+
+ 
+.moon
+{
+    position: absolute;
+    bottom: -20px;
+    right: 3px;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.3s ease bottom;
+}
+
+.moon:before
+{
+    content: "";
+    position: absolute;
+    left: -1px;
+    width: 13px;
+    height: 13px;
+    background-color:#03a9f4;
+    border-radius: 50%;
+    transition: 0.3s ease background-color;
+}
+
+.settings__checkbox:checked + .toggleDarkLight
+{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,44,255,1) 0%, rgba(60,9,121,1) 61%);
+}
+
+.settings__checkbox:checked + .toggleDarkLight .star
+{
+    
+}
+
+.settings__checkbox:checked + .toggleDarkLight .star
+{
+    color: yellow;
+}
+
+.settings__checkbox:checked + .toggleDarkLight .moon
+{
+    bottom: 8px;
+}
+
+.settings__checkbox:checked + .toggleDarkLight .moon:before
+{
+    background-color: rgba(60,9,121,1);
+} 
+.settings__checkbox:checked + .toggleDarkLight .star {
+   top: -20px;
+}

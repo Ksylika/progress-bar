@@ -1,0 +1,49 @@
+:root {
+    --background-color: #FFF;
+    --primary-color: #000;
+    --progress-color-calm: #f877cd;
+    --semi-transp-color: #D9D9EE;
+    --dark-border-color: #02040F;
+    --blueish-border-color: #f877cd;
+
+    --background-color-eye: #fff;
+}
+
+:root.dark-theme {
+    --background-color: #1d1d1d;
+    --primary-color: #fff;
+    --progress-color: #ff33ff;
+    --progress-color-calm: #ff3bbe;
+    --semi-transp-color: #D9D9EE;
+    --dark-border-color: #02040F;
+    --blueish-border-color: #ff3bbe;
+    --cat-display: none;
+    --background-color-eye: linear-gradient(90deg, rgba(102,121,9,1) 0%, rgba(249,255,0,1) 39%);
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+}
+
+.container {
+    margin: 30px;
+    display: flex;
+    flex: 1 1 400px;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 3rem;
+    max-width: 70%;
+    padding: 0 70px;
+    margin: 7% auto;
+    font-family: "Open Sans", sans-serif;
+}
+
+span.active {
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff045c, #fffdd0, #ff045c, #fffdd0);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-animation 4s ease infinite;
+}
